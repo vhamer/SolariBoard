@@ -1,0 +1,45 @@
+body {
+	background-color: #303030;
+	font-family: "Arial Narrow";
+	font-size: x-large;
+	color: white;
+}
+
+.halfTile {  /* tile cointaining a single letter, made up of two half-tiles */
+	position: relative;
+	display: inline-block;
+	font-size: 80px;
+	width: 55px;
+	margin: 5px;
+	color: transparent;
+	overflow: hidden;
+	white-space: pre;
+	background-color: black;
+}
+
+.halfTile:before {  /* top half of tile */
+	display: block;
+	z-index:2;
+	position: absolute;
+	width: 55px;
+	top:0;
+	height:50%;
+	content: attr(topcontent);
+	overflow: hidden;
+	color: red;
+	background-color: black;
+	text-align: center;
+}
+
+.halfTile:after {   /* bottom half of tile */
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 55px;
+	height: 100%;
+	content: attr(bottomcontent);
+	overflow: hidden;
+	color: blue;
+	text-align: center;
+}
